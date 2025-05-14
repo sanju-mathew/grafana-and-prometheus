@@ -18,3 +18,18 @@ This project outlines the setup of a robust monitoring stack using **Prometheus*
 
 ## 📁 Project Structure
 
+---
+
+## 🚀 Deployment Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/homelab-monitoring.git
+cd homelab-monitoring
+
+📚 Learn More
+📘 Read the full setup guide and context on my website:
+👉 Grafana and Prometheus Homelab Monitoring Guide
+
+Feel free to fork and adapt this project to suit your homelab or self-hosted monitoring needs!
