@@ -21,14 +21,14 @@ This project outlines the setup of a robust monitoring stack using **Prometheus*
 ### Prometheus
 
 
-## Prometheus-
+### Prometheus-
 .
 ├── config
 │ └── prometheus.yml
 ├── docker-compose.yaml
 └── prometheus_data/
 
-## Grafana
+### Grafana
 .
 ├── docker-compose.yaml
 └── grafana-storage/
