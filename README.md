@@ -17,7 +17,37 @@ This project outlines the setup of a robust monitoring stack using **Prometheus*
 ---
 
 ## 📁 Project Structure
+Prometheus-
+.
+├── config
+│   └── prometheus.yml
+├── docker-compose.yaml
+└── prometheus_data
 
+Grafana
+.
+├── docker-compose.yaml
+└── grafana-storage
+    ├── grafana.db
+    ├── plugins/
+    │   ├── grafana-clock-panel/
+    │   │   ├── plugin.json
+    │   │   └── README.md
+    │   ├── grafana-exploretraces-app/
+    │   │   ├── plugin.json
+    │   │   └── README.md
+    │   ├── grafana-lokiexplore-app/
+    │   │   ├── plugin.json
+    │   │   └── README.md
+    │   ├── grafana-metricsdrilldown-app/
+    │   │   ├── plugin.json
+    │   │   └── README.md
+    │   ├── grafana-pyroscope-app/
+    │   │   ├── plugin.json
+    │   │   └── README.md
+    │   └── grafana-simple-json-datasource/
+    │       ├── plugin.json
+    │       └── README.md
 ---
 
 ## 🚀 Deployment Instructions
