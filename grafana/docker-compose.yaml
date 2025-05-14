@@ -1,0 +1,32 @@
+services:
+  grafana:
+    image: grafana/grafana-enterprise
+    container_name: grafana
+    restart: unless-stopped
+    #ports:
+     #- '3000:3000'
+    user: "0" 
+    volumes:
+     - ./grafana-storage:/var/lib/grafana
+    networks:
+      - proxy
+    environment:
+     - "GF_PLUGINS_PREINSTALL=grafana-clock-panel, grafana-simple-json-datasource"
+    #Labels for traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.grafana.entrypoints=http"
+      - "traefik.http.routers.grafana.rule=Host(`grafana.sanjumathew.uk`)"
+      - "traefik.http.middlewares.grafana-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.grafana.middlewares=grafana-https-redirect"
+      - "traefik.http.routers.grafana-secure.entrypoints=https"
+      - "traefik.http.routers.grafana-secure.rule=Host(`grafana.sanjumathew.uk`)"
+      - "traefik.http.routers.grafana-secure.tls=true"
+      - "traefik.http.routers.grafana-secure.service=grafana"
+      - "traefik.http.services.grafana.loadbalancer.server.port=3000"
+      - "traefik.docker.network=proxy"
+volumes:
+  grafana-storage: {}
+networks:
+  proxy:
+    external: true
